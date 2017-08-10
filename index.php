@@ -6,7 +6,7 @@ $page = $_GET['page'];
 
 $limit = $_GET['limit'];
 
-$module = new IndexModel();
+$Model = new IndexModel();
 
 header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求  
 header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');  
@@ -14,13 +14,13 @@ header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');
 switch ($action) {
     case 'hotProduct':
 
-        echo json_encode($module->hotProduct());
+        echo json_encode($Model->hotProduct());
         break;
     case 'categoryList':
-        echo json_encode($module->categoryList());
+        echo json_encode($Model->categoryList());
         break;
     case 'hotStore':
-        echo json_encode($module->hotStore($page, $limit));
+        echo json_encode($Model->hotStore($page, $limit));
         break;
 
 }
