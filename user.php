@@ -62,7 +62,7 @@ class UserModel {
         $mobile = $_POST['mobile'] || '';
         $password = $_POST['password'] || '';
 
-        setcookie('user','isLogin',time() + 1800 + (8 * 3600), '/', '/');
+        setcookie('user','isLogin',time() + 1800 + (8 * 3600), '/', 'webzeal.cn');
 
         return [
             'code' => 0,
