@@ -71,7 +71,7 @@ class UserModel {
     }
 
     public function logout() {
-        setcookie('user','isLogin', time() -3600, '/', '.');
+        setcookie('user','isLogin', time() -3600, '/', '.webzeal.cn');
         return [
             'code' => 0,
             'msg' => '退出登录成功'
