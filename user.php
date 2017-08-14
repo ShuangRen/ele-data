@@ -62,7 +62,7 @@ class UserModel {
         $mobile = $_POST['mobile'] || '';
         $password = $_POST['password'] || '';
 
-        setcookie('user','isLogin',time() + 1800 + (8 * 3600), '/', 'webzeal.cn');
+        setcookie('user','isLogin',time() + 1800 + (8 * 3600), '/', '.webzeal.cn');
 
         return [
             'code' => 0,
@@ -72,7 +72,7 @@ class UserModel {
     }
 
     public function logout() {
-        setcookie('user','isLogin', time() -3600, '/', 'webzeal.cn');
+        setcookie('user','isLogin', time() -3600, '/', '.webzeal.cn');
         return [
             'code' => 0,
             'msg' => '退出登录成功'
