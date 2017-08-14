@@ -8,8 +8,9 @@ $limit = $_GET['limit'];
 
 $Model = new IndexModel();
 
-header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求  
-header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With');  
+header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求 
+header("Access-Control-Allow-Credentials: true"); 
+header('Access-Control-Allow-Headers: X-Requested-With,X_Requested_With'); 
 
 switch ($action) {
     case 'hotProduct':
