@@ -76,6 +76,7 @@ class UserModel {
                         'name' => '热销',
                         'list' => [
                             [
+                                pid => '1',
                                 name => '新奥尔良鸡翅',
                                 desc => '2个一对',
                                 number => '724',
@@ -84,6 +85,7 @@ class UserModel {
                                 img => 'http://fuss10.elemecdn.com/6/0c/576d1f75f566c2b6128ae583f9af9jpeg.jpeg'
                             ],
                             [
+                                pid => '2',
                                 name => '葡式蛋挞',
                                 desc => '2个一份',
                                 number => '517',
@@ -92,6 +94,7 @@ class UserModel {
                                 img => 'https://fuss10.elemecdn.com/1/e3/f700f481d423af7ae13de6fd2e36bjpeg.jpeg'
                             ],
                             [
+                                pid => '3',
                                 name => '意式烤肠',
                                 desc => '2根',
                                 number => '436',
@@ -100,6 +103,7 @@ class UserModel {
                                 img => 'https://fuss10.elemecdn.com/e/83/06cae706249828db600728f9307c6jpeg.jpeg'
                             ],
                             [
+                                pid => '4',
                                 name => '劲脆鸡腿堡',
                                 desc => '',
                                 number => '333',
@@ -113,6 +117,7 @@ class UserModel {
                         'name' => '优惠',
                         'list' => [
                             [
+                                pid => '5',
                                 name => '新奥尔良鸡翅',
                                 desc => '2个一对',
                                 number => '724',
@@ -121,6 +126,7 @@ class UserModel {
                                 img => 'http://fuss10.elemecdn.com/6/0c/576d1f75f566c2b6128ae583f9af9jpeg.jpeg'
                             ],
                             [
+                                pid => '6',
                                 name => '葡式蛋挞',
                                 desc => '2个一份',
                                 number => '517',
@@ -129,6 +135,7 @@ class UserModel {
                                 img => 'https://fuss10.elemecdn.com/1/e3/f700f481d423af7ae13de6fd2e36bjpeg.jpeg'
                             ],
                             [
+                                pid => '7',
                                 name => '意式烤肠',
                                 desc => '2根',
                                 number => '436',
@@ -137,6 +144,7 @@ class UserModel {
                                 img => 'https://fuss10.elemecdn.com/e/83/06cae706249828db600728f9307c6jpeg.jpeg'
                             ],
                             [
+                                pid => '8',
                                 name => '劲脆鸡腿堡',
                                 desc => '',
                                 number => '333',
@@ -150,6 +158,7 @@ class UserModel {
                         'name' => '披萨',
                         'list' => [
                             [
+                                pid => '9',
                                 name => '新奥尔良鸡翅',
                                 desc => '2个一对',
                                 number => '724',
@@ -158,6 +167,7 @@ class UserModel {
                                 img => 'http://fuss10.elemecdn.com/6/0c/576d1f75f566c2b6128ae583f9af9jpeg.jpeg'
                             ],
                             [
+                                pid => '10',
                                 name => '葡式蛋挞',
                                 desc => '2个一份',
                                 number => '517',
@@ -166,6 +176,7 @@ class UserModel {
                                 img => 'https://fuss10.elemecdn.com/1/e3/f700f481d423af7ae13de6fd2e36bjpeg.jpeg'
                             ],
                             [
+                                pid => '11',
                                 name => '意式烤肠',
                                 desc => '2根',
                                 number => '436',
@@ -174,6 +185,7 @@ class UserModel {
                                 img => 'https://fuss10.elemecdn.com/e/83/06cae706249828db600728f9307c6jpeg.jpeg'
                             ],
                             [
+                                pid => '12',
                                 name => '劲脆鸡腿堡',
                                 desc => '',
                                 number => '333',
