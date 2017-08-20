@@ -1,7 +1,7 @@
 <?php
 $action = $_GET['action'];
 
-$Model = new UserModel();
+$Model = new ShopModel();
 
 header("Access-Control-Allow-Origin: *"); // 允许任意域名发起的跨域请求 
 header("Access-Control-Allow-Credentials: true"); 
@@ -18,18 +18,23 @@ switch ($action) {
     case 'logout':
         echo json_encode($Model->logout());
         break;
-
+    case 'getOrderInfo':
+        echo json_encode($Model->getOrderInfo());
+        break;
+    case 'submitOrder':
+        echo json_encode($Model->submitOrder());
+        break;
 }
 
 
-class UserModel {
+class ShopModel {
 
     public function __construct() {}
 
-    public function getStore() {
+    public function getStore($id) {
         include('./index.php');
 
-        $sid = $_GET['sid'];
+        $sid = $_GET['sid'] || $id;
 
         $indexModel = new IndexModel();
 
@@ -51,6 +56,9 @@ class UserModel {
 
     public function getProductList() {
         $sid = $_GET['sid'];
+
+        //hack
+        $sid = 1;
 
         $list = $this->getProduct();
 
@@ -197,6 +205,82 @@ class UserModel {
                     ]
                 ]
             ]
+        ];
+    }
+
+    public function getOrderInfo() {
+        return [
+            'code'=>0,
+            'data'=>[
+                'time'=>[
+                    0=>'预计12:01',
+                    1=>'12.01-12.30',
+                    2=>'12.31-13.00',
+                    3=>'13.01-13.30',
+                    4=>'13.31-14.00',
+                    5=>'14.01-14.30',
+                    6=>'14.31-15.00',
+                ],
+                id => '1',
+                'store'=> $this->getStore(1),
+                'orderList'=> [
+                    [
+                        pid => '1',
+                        name => '新奥尔良鸡翅',
+                        num => '1',
+                        price => '22'
+                    ],
+                    [
+                        pid => '2',
+                        name => '葡式蛋挞',
+                        num => '2',
+                        price => '7'
+                    ],
+                    [
+                        pid => '3',
+                        name => '意式烤肠',
+                        num => '1',
+                        price => '8'
+                    ],
+                    [
+                        pid => '4',
+                        name => '劲脆鸡腿堡',
+                        num => '1',
+                        price => '14'
+                    ],
+                ],
+                expressMoney => '5'
+            ],
+        ];
+    }
+
+    /**
+    * address:
+    * time:
+    * oid:
+    * price:
+    * note:
+    * title:
+    **/
+    public function submitOrder() {
+        $post = $_POST;
+
+        if(empty($post['address'])) {
+            return [
+                code=>'400',
+                msg=>'填写配送地址'
+            ];
+        };
+        if(empty($post['time'])) {
+            return [
+                code=>'400',
+                msg=>'填写配送时间'
+            ];
+        };
+
+        return [
+            code=>0,
+            msg=>'提交成功'
         ];
     }
 }
