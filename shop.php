@@ -249,7 +249,8 @@ class ShopModel {
                         price => '14'
                     ],
                 ],
-                expressMoney => '5'
+                expressMoney => '5',
+                sala => 15
             ],
         ];
     }
