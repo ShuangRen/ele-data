@@ -24,6 +24,9 @@ switch ($action) {
     case 'submitOrder':
         echo json_encode($Model->submitOrder());
         break;
+    case 'orderSuccess':
+        echo json_encode($Model->orderSuccess());
+        break;
 }
 
 
@@ -282,6 +285,28 @@ class ShopModel {
         return [
             code=>0,
             msg=>'提交成功'
+        ];
+    }
+
+    public function orderSuccess() {
+        
+        $order = $this->getOrderInfo();
+        return [
+            'store'=> $order['data']['store']['data'],
+            'orderList'=>$order['data']['orderList'],
+            'expressInfo'=>[
+                'time'=>'尽快送达',
+                'address'=>'西藏北路交叉口西藏北路1552号3003室',
+                'contactName'=>'大板栗',
+                'sex'=>2,
+                'mobilePhone'=>'13300003031',
+                'expressType'=>1
+            ],
+            'orderInfo'=>[
+                'orderNo'=>'2017070811908468',
+                'payType'=>'支付宝',
+                'createTime'=>'2017-08-12 12:21'
+            ]
         ];
     }
 }
